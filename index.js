@@ -1,24 +1,19 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-  array.forEach(element => {
-    array.forEach(item => {
-      if(item+element===target){
-        return true;
-      }else{
-        return false;
-      }
-      
-    });
-    
-  });
+for (let i = 0; i < array.length; i++) {
+  const firstComparison = target-array[i];
+  for (let j = i+1; j < array.length; j++) {
+    if (array[j] === firstComparison){return true;}
+  }
+  return false;
 }
-hasTargetSum([3, 8, 12, 4, 11, 7],10)
-hasTargetSum([22, 19, 4, 6, 30], 25)
-hasTargetSum([1, 2, 5], 4)
-hasTargetSum([-7, 10, 4, 8], 3)
-hasTargetSum([1, 2, 3, 4], 5)
-hasTargetSum( [2, 2, 3, 3], 4)
-hasTargetSum([4], 4)
+}
+// hasTargetSum([3, 8, 12, 4, 11, 7],10)
+// hasTargum([22, 19, 4, 6, 30], 25)
+// hasTargetSum([1, 2, 5], 4)
+// hasTargetSum([-7, 10, 4, 8], 3)
+// hasTargetSum([1, 2, 3, 4], 5)
+// hasTargetSum( [2, 2, 3, 3], 4)
+// hasTargetSum([4], 4)
 
 /* 
   Write the Big O time complexity of your function here
