@@ -1,30 +1,39 @@
 function hasTargetSum(array, target) {
+  //n 
 for (let i = 0; i < array.length; i++) {
-  const firstComparison = target-array[i];
-  for (let j = i+1; j < array.length; j++) {
-    if (array[j] === firstComparison){return true;}
+  //nested loop n*2
+  let firstComparison = target-array[i];
+  for (let j = 0; j < array.length; j++) {
+    if (array[j] === firstComparison  && i!=j){
+      return true;
+    }
   }
   return false;
 }
 }
-// hasTargetSum([3, 8, 12, 4, 11, 7],10)
-// hasTargum([22, 19, 4, 6, 30], 25)
-// hasTargetSum([1, 2, 5], 4)
-// hasTargetSum([-7, 10, 4, 8], 3)
-// hasTargetSum([1, 2, 3, 4], 5)
-// hasTargetSum( [2, 2, 3, 3], 4)
-// hasTargetSum([4], 4)
+console.log(hasTargetSum([22, 19, 4, 6, 30],25));
+
 
 /* 
   Write the Big O time complexity of your function here
+
+  time complexity:0(n^2)
+  space complexity: 0(n)
 */
 
 /* 
   Add your pseudocode here
+  for loop iteration to array given
+  find first comparison by substracting it from target
+
 */
 
 /*
   Add written explanation of your solution here
+  take one argument from array, subtract it from target then compare it 
+  to the other values in array. if it matches return true if not
+  go to another value and repeat till you run out of 
+  values in array.
 */
 
 // You can run `node index.js` to view these console logs
